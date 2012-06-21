@@ -5,11 +5,25 @@ Simulating all interactions between all cores sequentially is very inefficient a
 Parallelizing this taking all these interactions into account has huge synchronization overhead. Imagine
 a 1000 core system where each core is run as separate theread and synchronizes with others for every 100-500
 insturctions when running billions of instructions.
+
 Simulations are done to trade off different architectural design choices. So here relative comparison of
 simulation metrics are very important compared to that of absolute numbers. This gives a intuitive hint that
 accuracy in these simulations can be relaxed to the level that relative comparison of simulations still makes sense.
+This relaxation of accuracy should give performance benifits.
 
-Reference papers can be found here.
+In this regard, a novel parallel simulation paradigm namely "Slack Simulations" are proposed. These simulations
+are designed to trade of accuracy and performance. Various varients of slack simulations are proposed, evaluated
+and it was shown that these provide almost 10X performance with negligible loss of accuracy. 
+
+Though these schemes and ideas are evaluated in the context of multicores, they are in general applicable to
+any parallel simulations where accuracy can be relaxed. Slack simulations fall under the global category of
+"Approximate computing" where techniques are used to improve the performance at the slight expense of accuracy.
+
+This project was done at University of Southern California(USC) under the supervision of Prof. Michel Dubois
+and Prof. Murali Annavaram. 
+
+A detailed explanation of the framework and schemes can be found in these Reference papers.
+
 [1] CHEN”, J. 2009. Parallel simulations of chip multiprocessors. Ph.D. thesis,  University of Southern 
 California, Los Angeles, CA, USA. 
 
